@@ -71,3 +71,15 @@ body {
 	opacity:.90;
 	margin-top:10vh;
 }
+
+tbody {
+	overflow: scroll;
+	height:60vh;
+	display:block;
+}
+
+#button-container {
+	margin:0px auto;
+	width:100%;
+	height:32px;
+}

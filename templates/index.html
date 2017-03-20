@@ -4,16 +4,27 @@
 	<title>Recipe App</title>
 	<link rel="stylesheet" type="text/css" href="../static/websiteDesign.css">
 	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:100'>
+	<script src="../static/jquery-1.8.3.min.js"></script>
+	<script src="../static/website.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<div id="page-container">
 		<h1 id="title" class="font">Welcome to Recipe Assistant!</h1>
-		<div id="Add" class="button left"></div>
-		<div id="Search" class="button center"></div>
-		<div id="Settings" class="button right"></div>
-		<TABLE id="table" BORDER="1" WIDTH="80%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
-			<TR class="font"><TH><BR>List of Recipes</TH></TR>
-		</TABLE>
+		<div id="button-container">
+			<div id="Add" class="button left"></div>
+			<div id="Search" class="button center"></div>
+			<div id="Settings" class="button right"></div>
+		</div>
+		<table id="table" BORDER="1" WIDTH="80%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
+			<thead>
+				<tr>
+					<th class="font">List of Recipes</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
 	</div>	
 </body>
 </html>
