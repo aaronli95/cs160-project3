@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var theUrl = "https://h89jpk0yjl.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes"
+    $("#get_button").click(function(){
+        $.get(theUrl, function(data, status){
+            $("#result").text(JSON.stringify(data)  );
+        });
+    });
+    $("#query_button").click(function(){
+        $.post(theUrl, JSON.stringify({
+            "type": "QUERY",
+            "data": {
+                "TableName": "Recipes",
+                //Condition for item
+                "FilterExpression": "#y = :y",
+                //Variable for attribute name (think of key). You have to preface the variables with #
+                "ExpressionAttributeNames": {
+                    "#y": "year",
+                },
+                //Variable for value to attribute. You have to preface the variables with :
+                "ExpressionAttributeValues": {
+                    ":y": 2016
+                }
+            }
+        }),
+        //success callback
+        function(data, status) {
+            alert(JSON.stringify(data))
+        }).fail(function(res) {
+            console.log(res)
+        })
+    })
+
+
+    $("#post_button").click(function(){
+        $.ajax({
+          url: theUrl,
+          type: 'POST',
+          data: JSON.stringify({"TableName": "Recipes", "Item": {"Directions":"sucking myself off", "Ingredients":"eddy is a faggot", "RecipeName":"carmen sucks nuts"}}),
+          success: function(data) {
+            alert("POSTed successfully");
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert("Error");
+            }
+        });
+    });
+    $("#put_button_add").click(function(){
+        $.post(theUrl, JSON.stringify({
+            "type": "PUT",
+            "data": {
+                "TableName": "Recipes",
+                //primary key (unique identifier of item)
+                "Key": {
+                    "name": "Moana"},
+                //There are different expressions you can add to update expression. SET adds/updates attributes to an item
+                "UpdateExpression": "set #y=:y",
+                "ExpressionAttributeNames": {
+                    "#y" : "year"
+                },
+                "ExpressionAttributeValues": {
+                    ":y" : 2016},
+                "ReturnValues": "UPDATED_NEW"
+                }}),
+        function(data, status){
+            alert(status);
+        }).fail(function(res) {
+            console.log(res)
+        })
+    })
+    $("#put_button_remove").click(function(){
+        $.post(theUrl, JSON.stringify({
+            "type": "PUT",
+            "data": {
+                "TableName": "Recipes",
+                "Key": {
+                    "name": "Moana"},
+                // Remove removes an attribute from an item
+                "UpdateExpression": "remove #y",
+                "ExpressionAttributeNames": {
+                    "#y" : "year"},
+                "ReturnValues": "UPDATED_NEW"
+                }}),
+        function(data, status){
+            alert(status);
+        }).fail(function(res) {
+            // add a fail callback to get/post to get an error response while debugging!
+            console.log(res)
+        })
+    })
+    $("#delete_button").click(function(){
+        $.post(theUrl, JSON.stringify({
+            "type": "DELETE",
+            "data": {
+                "TableName": "Recipes",
+                "Key": {
+                    "name": "Zootopia"
+                }
+            }
+        }),
+        function(data, status){
+            alert(status);
+        })
+    })
+});
+</script>
+</head>
+<body>
+
+<div class="get_requests">
+    GET Requests<br>
+    <button id="get_button">Send an HTTP GET request the entire database</button>
+</div>
+<br>
+<div class="post_requests">
+    POST Requests<br>
+    <button id="query_button">Send an HTTP POST request for querying a specific item</button>
+    <button id="post_button">Send an HTTP POST request to a page</button>
+    <button id="put_button_add">Send an HTTP PUT request to add an att</button>
+    <button id="put_button_remove">Send an HTTP PUT request to remove an att</button>
+    <button id="delete_button">Send an HTTP DELETE request to a page</button>
+</div>
+<div style="text-align:center;border:1px solid red">
+Recipes
+</div>
+<div id="result">
+    Result
+</div>
+</body>
+</html>
