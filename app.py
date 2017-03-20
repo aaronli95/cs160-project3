@@ -2,7 +2,7 @@ from flask import Flask
 import os
 from boto.dynamodb2.fields import HashKey
 from boto.dynamodb2.table import Table
-from flask import Flask
+from flask import Flask, render_template
 from flask.ext.dynamo import Dynamo
 
 app = Flask(__name__)
