@@ -4,9 +4,70 @@ body {
 	margin:0px;
 }
 
+#title {
+	color: #FF4747;
+	margin:auto;
+	text-align: center;
+	padding-top: 5vh;
+	padding-bottom: 3vh;
+}
 
-.page {
+#page-container {
 	height:100vh;
 	width:100vw;
-	background:black;
+    background: url("background.jpg");
+    background-size: cover;
+}
+
+#recipe-page-container {
+	height:100vh;
+	width:100vw;
+	background: #FF4747;
+}
+
+.button {
+	width: 50px;
+	height: 32px;
+	cursor: pointer;
+}
+
+#Add {
+	background: url("plus-symbol.png") no-repeat center;
+	background-size:contain;
+	float:left;
+}
+
+#Search {
+	background: url("magnifying-glass.png") no-repeat center;
+	background-size:contain;
+	float:left;
+}
+
+#Settings {
+	background: url("settings.png") no-repeat center;
+	background-size:contain;
+	float:left;
+}
+
+.left {
+	margin:auto auto auto 0;
+}
+
+.center {
+	margin:auto;
+}
+
+.right {
+	margin:auto 0 auto auto;
+}
+
+.font {
+	font-family: 'Lato', sans-serif;
+	color: #FF4747;
+}
+
+#table {
+	margin:0px auto;
+	opacity:.90;
+	margin-top:10vh;
 }
