@@ -11,12 +11,16 @@ app = Flask(__name__)
 # os.environ["AWS_SECRET_KEY"] = AWS_SECRET_KEY
 
 @app.route("/") 
-def hello(): 
+def home(): 
 	return render_template('index.html') 
 
-@app.route("/fuck")
-def DB():
-	return "fuck"
+@app.route("/recipePage")
+def RP():
+	return "This should be our recipe page"
+
+@app.route("/ingredientsPage")
+def IP():
+	return "this should be our ingredients page"
 
 
 if __name__ == "__main__": 
