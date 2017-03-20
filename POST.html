@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#getReq").click(function(){
+	  $.ajax({
+		  url: 'https://h89jpk0yjl.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes',
+		  type: 'POST',
+		  data: JSON.stringify({"TableName": "Recipes", "Item": {"Directions":"fuck myself", "Ingredients":"sucking my own dick", "RecipeName":"test and kill myself"}}),
+		  success: function(data) {
+			alert("POSTed successfully");
+			},
+			error: function(xhr, ajaxOptions, thrownError) {
+				alert("Error");
+			}
+		});
+	});
+});
+
+</script>
+</head>
+<body>
+<div>
+<button id="getReq">Send HTTP POST request to a AWS</button>
+</div>
+</body>
