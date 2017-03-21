@@ -2,13 +2,28 @@
 	<head>
 		<title>Recipe Page</title>
 		<link rel="stylesheet" type="text/css" href="../static/websiteDesign.css">
+		<script src="../static/jquery-1.8.3.min.js"></script>
+		<script src="../static/AddRecipe.js"></script>
 	</head>
 	<body>
 		<div id=recipe-page-container>
 			<h1 class="font">Add A New Recipe!</h1>
-			<div id="name">Title: <input type:"text" name="RecipeName"></div>
-			<div id="ingredients">Ingredients: <input type:"text" name="Ingredients"></div>
-			<div id="steps">Steps: <input type:"text" name="PreparationSteps"></div>
+			<div id="name" class="font">Title: <input type:"text" name="RecipeName"></div>
+			<div id="ingredients" class="font">Ingredients: <input type:"text" name="Ingredients"></div>
+			<table id="ingredients-table" BORDER="1" WIDTH="40%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
+				<input type:"text" name="RecipeName">
+				<input type:"text" name="RecipeName">
+				<input type:"text" name="RecipeName">
+				<input type:"text" name="RecipeName">
+				<input type:"text" name="RecipeName">
+				<tbody class="small-table"></tbody>
+			</table>
+			<div id="steps" class="font">Steps: <input type:"text" name="PreparationSteps"></div>
+			<table id="recipes-table" BORDER="1" WIDTH="40%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
+			<tbody class="small-table"></tbody>
+			</table>
+			<div id="AddRecipe" class="standardButton">Add Recipe</div>
+			<div id="Cancel" class="standardButton">Cancel</div>
 		</div>
 	</body>
 </html>

@@ -5,10 +5,10 @@ $(document).ready(function(){
 		$(document).ready(function(){
 		    var theUrl = "https://h89jpk0yjl.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes"
 	        var recipes = [];
-	        var ingredientsImg = "<img class='button' src='../static/harvest.png'/>";
+	        var ingredientsImg = "<img class='ingredients button' src='../static/harvest.png'/>";
 	        // ingredientsImg.className = "button";
 	        // recipeImg.className = "button";
-			var recipeImg = "<img class='button' src='../static/recipe.png'/>";
+			var recipeImg = "<img class='recipes button' src='../static/recipe.png'/>";
 	        $.ajaxSetup({
 				async: false
 			});
@@ -32,10 +32,16 @@ $(document).ready(function(){
 		});
 
 		$("#Add").click(function() {
-			console.log("HI");
 			window.location.href ="../templates/recipePage.html";
 		});
 
+		$(".ingredients").click(function() {
+			console.log("Clicking Ingredients BUtton");
+		});
+
+		$(".recipes").click(function() {
+			console.log("Clicking Recipes BUtton");
+		});
 	});
 
 	// //Brings up information about me 
