@@ -29,15 +29,26 @@ $(document).ready(function(){
 				// var row = $("<tr>").append("<td>" + recipes[i]["RecipeName"] + ingredientsImg + recipeImg + "</td>");
 				$("tbody").append(row);
 			}
+
+			// @Aaron Your part goes here
+			$(".ingredients").click(function() {
+				console.log("Clicking Ingredients BUtton");
+				window.location.href ="../templates/ingredientPage.html";
+			});
+
+			// @Carmen Your part goes here
+			$(".recipes").click(function() {
+				console.log("Clicking Recipes BUtton");
+			});
 		});
 
 		$("#Add").click(function() {
 			window.location.href ="../templates/recipePage.html";
 		});
 
-		$(".ingredients").click(function() {
-			console.log("Clicking Ingredients BUtton");
-		});
+		// $(".ingredients").click(function() {
+		// 	console.log("Clicking Ingredients BUtton");
+		// });
 
 		$(".recipes").click(function() {
 			console.log("Clicking Recipes BUtton");
