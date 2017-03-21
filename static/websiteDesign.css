@@ -19,13 +19,20 @@ body {
     background-size: cover;
 }
 
+#add-page-container {
+	height:100vh;
+	width:100vw;
+	background: url("background1.jpg");
+	background-size: cover;
+}
+
 #recipe-page-container {
 	height:100vh;
 	width:60vw;
-	background:#d3d3d3;
-	margin:0px auto;
-/*	background: #FF4747;
-*/}
+/*	background:#d3d3d3;
+*/	margin:0px auto;
+	opacity:.93;
+}
 
 .button {
 	width: 50px;
@@ -105,6 +112,8 @@ tbody {
 	overflow: scroll;
 	height:200px;
 	display: block;
+	margin:0px auto;
+	width:190px;
 }
 
 td {
@@ -125,4 +134,8 @@ td {
 	margin:0px auto;
 	width:350px;
 	height:50px;
+}
+
+.centerize {
+	margin: 0px auto;
 }
