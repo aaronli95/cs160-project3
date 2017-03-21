@@ -35,13 +35,13 @@ body {
 
 .standardButton {
 	cursor: pointer;
-	width: 150px;
+	/*width: 150px;*/
 	height:50px;
 	background:#FF4747;
 	color:#ffffff;
 	font-family: 'Lato', sans-serif;
-	float:left;
-	margin-right:50px;
+/*	float:left;
+	margin-right:50px;*/
 	text-align: center;
 	font-size:20px;
 	line-height: 50px;
@@ -109,4 +109,20 @@ tbody {
 
 td {
 	width:100%;
+}
+
+.centerDiv {
+	margin:0px auto;
+	text-align: center;
+}
+
+#header {
+	padding-top:5vh;
+	margin-bottom:5vh;
+}
+
+#add-cancel-container {
+	margin:0px auto;
+	width:350px;
+	height:50px;
 }

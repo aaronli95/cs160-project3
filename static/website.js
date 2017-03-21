@@ -23,7 +23,8 @@ $(document).ready(function(){
 	        for (var i = 0; i < recipes.length; i++) {
 	        	// var newRow = document.createElement("tr");
 	        	// newRow.class
-				var row = $("<tr>").append($("<td>").html(recipes[i]["RecipeName"]));
+	        	var row = $("<tr>").append("<img class='recipes' src='../static/recipe.png' style='height:64px'/>");
+				row.append($("<td>").html(recipes[i]["RecipeName"]));
 				row.append("<td>" + ingredientsImg + "</td>");
 				row.append("<td>" + recipeImg + "</td>");
 				// var row = $("<tr>").append("<td>" + recipes[i]["RecipeName"] + ingredientsImg + recipeImg + "</td>");

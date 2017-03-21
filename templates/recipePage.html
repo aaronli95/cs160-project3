@@ -7,23 +7,15 @@
 	</head>
 	<body>
 		<div id=recipe-page-container>
-			<h1 class="font">Add A New Recipe!</h1>
-			<div id="name" class="font">Title: <input type:"text" name="RecipeName"></div>
-			<div id="ingredients" class="font">Ingredients: <input type:"text" name="Ingredients"></div>
-			<table id="ingredients-table" BORDER="1" WIDTH="40%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
-				<input type:"text" name="RecipeName">
-				<input type:"text" name="RecipeName">
-				<input type:"text" name="RecipeName">
-				<input type:"text" name="RecipeName">
-				<input type:"text" name="RecipeName">
-				<tbody class="small-table"></tbody>
-			</table>
-			<div id="steps" class="font">Steps: <input type:"text" name="PreparationSteps"></div>
-			<table id="recipes-table" BORDER="1" WIDTH="40%" CELLPADDING="4" CELLSPACING="3" bgcolor="#ffffff">
-			<tbody class="small-table"></tbody>
-			</table>
-			<div id="AddRecipe" class="standardButton">Add Recipe</div>
-			<div id="Cancel" class="standardButton">Cancel</div>
+			<h1 id="header" class="font centerDiv">Add A New Recipe!</h1>
+			<div id="name" class="font centerDiv">Title: <input id="newTitle" type:"text" name="RecipeName"></div>
+			<div id="ingredients" class="font centerDiv">Ingredients: <input id="newIngredients" type:"text" name="Ingredients"></div>
+			<div id="steps" class="font centerDiv">Steps: <input id="newSteps" type:"text" name="PreparationSteps"></div>
+			<div id="image" class="font centerDiv">Image URL: <input id="newImage" type:"text" name="RecipeImg"></div>
+			<div id="add-cancel-container">
+				<div id="AddRecipe" class="standardButton">Add Recipe</div>
+				<div id="Cancel" class="standardButton">Cancel</div>
+			</div>
 		</div>
 	</body>
 </html>

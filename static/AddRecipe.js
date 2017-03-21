@@ -17,17 +17,17 @@ $(document).ready(function(){
 			});
 
 			$("#AddRecipe").click(function() {
-				$.ajax({
-          			url: theUrl,
-          			type: 'POST',
-          			data: JSON.stringify({"TableName": "Recipes", "Item": {"Directions":"sucking myself off", "Ingredients":"eddy is a faggot", "RecipeName":"carmen sucks nuts"}}),
-          		success: function(data) {
-            		alert("POSTed successfully");
-            		},
-            		error: function(xhr, ajaxOptions, thrownError) {
-                		alert("Error");
-            		}
-        		});
+				// $.ajax({
+    //       			url: theUrl,
+    //       			type: 'POST',
+    //       			data: JSON.stringify({"TableName": "Recipes", "Item": {"Directions":"sucking myself off", "Ingredients":"eddy is a faggot", "RecipeName":"carmen sucks nuts"}}),
+    //       		success: function(data) {
+    //         		alert("POSTed successfully");
+    //         		},
+    //         		error: function(xhr, ajaxOptions, thrownError) {
+    //             		alert("Error");
+    //         		}
+    //     		});
 				window.location.href="../templates/index.html";
 			});
 		});
