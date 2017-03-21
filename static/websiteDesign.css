@@ -26,12 +26,34 @@ body {
 	background-size: cover;
 }
 
+#ingredient-page-container {
+	height:100vh;
+	width:100vw;
+	background: url("background2.jpg") no-repeat;
+	background-size:cover;
+}
+
+#display-page-container {
+	height:100vh;
+	width:100vw;
+	background: url("background3.jpg");
+	background-size:cover;
+}
+
 #recipe-page-container {
 	height:100vh;
 	width:60vw;
 /*	background:#d3d3d3;
 */	margin:0px auto;
-	opacity:.93;
+	/*opacity:.93;*/
+}
+
+.container {
+	height:100vh;
+	width:80vw;
+	margin:0px auto;
+	/*background:#000000;*/
+
 }
 
 .button {
@@ -130,6 +152,11 @@ td {
 	margin-bottom:5vh;
 }
 
+#recName {
+	padding-top:10vh;
+	margin-bottom: 5vh;
+}
+
 #add-cancel-container {
 	margin:0px auto;
 	width:350px;
@@ -138,4 +165,17 @@ td {
 
 .centerize {
 	margin: 0px auto;
+}
+
+.back {
+	background: url("left-arrow.png");
+	height:64px;
+	width:64px;
+	cursor: pointer;
+	float:left;
+}
+
+#mother {
+	background: white;
+	opacity:.75;
 }

@@ -7,6 +7,7 @@ $(document).ready(function(){
 	        var recipes = [];
 	        var ingredientsImg = "<img class='ingredients button' src='../static/harvest.png'/>";
 			var recipeImg = "<img class='recipes button' src='../static/recipe.png'/>";
+			var splitData = [];
 	        $.ajaxSetup({
 				async: false
 			});
@@ -18,7 +19,7 @@ $(document).ready(function(){
 	        });
 	        console.log(recipes);
 	        for (var i = 0; i < recipes.length; i++) {
-	        	var row = $("<tr>").append("<img class='recipes' style='height:64px' src=" + recipes[i]["URL"] + "/>");
+	        	var row = $("<tr id=temp" + i.toString() + ">").append("<img class='recipes' style='height:64px' src=" + recipes[i]["URL"] + "/>");
 				row.append($("<td>").html(recipes[i]["RecipeName"]));
 				row.append("<td>" + ingredientsImg + "</td>");
 				row.append("<td>" + recipeImg + "</td>");
@@ -28,12 +29,29 @@ $(document).ready(function(){
 			// @Aaron Your part goes here
 			$(".ingredients").click(function() {
 				console.log("Clicking Ingredients Button");
+				var currentRow = $(this).closest("tr")[0].id;
+				if (currentRow != "" || currentRow != null || currentRow.slice(-1) != "" || currentRow.slice(-1) != null) {
+					var currentData = recipes[parseInt(currentRow.slice(-1))]["Ingredients"];
+					// console.log(currentData);
+					splitData = currentData.split("\n");
+					localStorage.setItem("splitData", splitData);
+					localStorage.setItem("name", recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);
+
+					// console.log(recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);
+				}
 				window.location.href ="../templates/ingredientPage.html";
 			});
 
 			// @Carmen Your part goes here
 			$(".recipes").click(function() {
 				console.log("Clicking Recipes Button");
+				var currentRow = $(this).closest("tr")[0].id;
+				if (currentRow != "" || currentRow != null || currentRow.slice(-1) != "" || currentRow.slice(-1) != null) {
+					var currentData = recipes[parseInt(currentRow.slice(-1))]["Directions"];
+					// console.log(currentData);
+					splitData = currentData.split("\n");
+					localStorage.setItem("directions", splitData);
+					localStorage.setItem("name", recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);				}
 				window.location.href="../templates/displayRecipePage.html";
 			});
 		});
@@ -45,5 +63,9 @@ $(document).ready(function(){
 		$(".recipes").click(function() {
 			console.log("Clicking Recipes BUtton");
 		});
+
+		function getSplitData() {
+			return splitData;
+		}
 	});
 });
