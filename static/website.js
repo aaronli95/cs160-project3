@@ -38,7 +38,7 @@ $(document).ready(function(){
 
 					// console.log(recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);
 				}
-				window.location.href ="../templates/ingredientPage.html";
+				window.location.href = "../templates/ingredientPage.html?id=" + currentRow;
 			});
 
 			// @Carmen Your part goes here
