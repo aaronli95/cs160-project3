@@ -25,13 +25,12 @@ $(document).ready(function(){
 				$("tbody").append(row);
 			}
 
-			// @Aaron Your part goes here
 			$(".ingredients").click(function() {
 				console.log("Clicking Ingredients Button");
-				window.location.href = "../templates/ingredientPage.html";
+				var currentRow = $(this).closest("tr")[0].id;
+				window.location.href = "../templates/ingredientPage.html?id=" + currentRow;
 			});
 
-			// @Carmen Your part goes here
 			$(".recipes").click(function() {
 				console.log("Clicking Recipes Button");
 				var currentRow = $(this).closest("tr")[0].id;
