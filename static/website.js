@@ -28,7 +28,17 @@ $(document).ready(function(){
 			// @Aaron Your part goes here
 			$(".ingredients").click(function() {
 				console.log("Clicking Ingredients Button");
-				window.location.href = "../templates/ingredientPage.html";
+				var currentRow = $(this).closest("tr")[0].id;
+				if (currentRow != "" || currentRow != null || currentRow.slice(-1) != "" || currentRow.slice(-1) != null) {
+					var currentData = recipes[parseInt(currentRow.slice(-1))]["Ingredients"];
+					// console.log(currentData);
+					splitData = currentData.split("\n");
+					localStorage.setItem("splitData", splitData);
+					localStorage.setItem("name", recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);
+
+					// console.log(recipes[parseInt(currentRow.slice(-1))]["RecipeName"]);
+				}
+				window.location.href ="../templates/ingredientPage.html";
 			});
 
 			// @Carmen Your part goes here
